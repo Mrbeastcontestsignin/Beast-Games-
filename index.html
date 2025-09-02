@@ -2,156 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Beast Games Sign-Up</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 2em;
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        url('https://www.beastgames.com/your-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
     }
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: #111;
-      padding: 2em;
-      border-radius: 10px;
-      animation: fadeIn 1s ease-in-out;
-      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+
+    /* Logo styling */
+    .logo {
+      margin-bottom: 20px;
+      animation: fadeSlideDown 1s ease-out;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
+    .logo img {
+      max-width: 250px;
+      height: auto;
+    }
+    @keyframes fadeSlideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    label {
-      display: block;
-      text-align: left;
-      margin: 0.5em 0 0.2em;
-      font-size: 0.9em;
-      opacity: 0;
-      animation: fadeSlideIn 0.5s forwards;
+
+    form {
+      background: rgba(17,17,17,0.9);
+      padding: 2em;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
+      animation: fadeSlideIn 1s ease-out;
+      text-align: center;
     }
     @keyframes fadeSlideIn {
-      0% { opacity: 0; transform: translateX(-10px); }
-      100% { opacity: 1; transform: translateX(0); }
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    label:nth-of-type(1) { animation-delay: 0.3s; }
-    label:nth-of-type(2) { animation-delay: 0.4s; }
-    label:nth-of-type(3) { animation-delay: 0.5s; }
-    label:nth-of-type(4) { animation-delay: 0.6s; }
-    label:nth-of-type(5) { animation-delay: 0.7s; }
 
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    }
+    p {
+      margin-bottom: 1.5em;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+
+    label {
+      display: block;
+      font-size: 0.9em;
+      margin-top: 1em;
+      margin-bottom: 0.3em;
+      text-align: left;
+    }
     input {
       width: 100%;
-      padding: 0.8em;
-      margin: 0.5em 0;
-      border: 2px solid #333;
+      padding: 0.9em;
       background: #222;
+      border: 2px solid #333;
       color: #fff;
-      border-radius: 5px;
+      border-radius: 6px;
       box-sizing: border-box;
-      transition: border-color 0.3s ease, background 0.3s ease;
+      transition: border-color 0.3s ease;
     }
     input:focus {
       border-color: #e60000;
-      background: #333;
       outline: none;
     }
 
     button {
-      background: #e60000;
-      color: white;
-      padding: 1em;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      margin-top: 1.5em;
       width: 100%;
-      font-size: 1em;
-      margin-top: 1em;
-      transition: transform 0.3s ease, background 0.3s ease;
-      animation: popIn 0.5s ease-in-out 1s forwards;
-      opacity: 0;
-    }
-    @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
+      padding: 1em;
+      background: #e60000;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
     button:hover {
       background: #cc0000;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     footer {
-      margin-top: 2em;
       font-size: 0.8em;
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out 1.5s forwards;
+      margin-top: 1.5em;
+      text-align: center;
+      opacity: 0.8;
     }
     footer a {
       color: #ccc;
       text-decoration: none;
-      margin: 0 5px;
-      position: relative;
-      transition: color 0.3s ease;
+      margin: 0 6px;
     }
     footer a:hover {
       color: #fff;
     }
-    footer a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 1px;
-      background: #fff;
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-    }
-    footer a:hover::after {
-      width: 100%;
-    }
   </style>
 </head>
 <body>
-  <h1>Season 2 Submissions Are Now Closed</h1>
-  <p>Want in next time? Enter your info below to be the first to know when submissions reopen!</p>
+  <!-- Logo Section -->
+  <div class="logo">
+    <img src="Mrbeast-logo.png" alt="Beast Games Logo">
+  </div>
 
   <form>
-    <label for="dob">Date of Birth (mm/dd/yyyy)</label>
-    <input type="date" id="dob" name="dob" required>
-    
+    <h1>Season 2 Submissions Are Now Closed</h1>
+    <p>Want in next time? Be first to know when submissions reopen!</p>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" required>
     <label for="first_name">First Name</label>
-    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-    
+    <input type="text" id="first_name" placeholder="First Name" required>
     <label for="last_name">Last Name</label>
-    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-    
+    <input type="text" id="last_name" placeholder="Last Name" required>
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Phone Number (+234…)" pattern="\+[0-9]{10,}" required>
-    
+    <input type="tel" id="phone" placeholder="+234…" pattern="\+[0-9]{10,}" required>
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="email" id="email" placeholder="Email" required>
 
     <button type="button" onclick="redirectToGoogleSignIn()">Sign up for news and updates</button>
-  </form>
-
-  <footer>
-    <p>Beast Games from MrBeast®</p>
-    <p>
-      <a href="https://www.beastgames.com/data-protection">Data Protection Policy</a> |
+    <footer>
+      <a href="https://www.beastgames.com/data-protection">Data Protection</a> |
       <a href="https://www.beastgames.com/privacy">Privacy Policy</a> |
       <a href="https://www.beastgames.com/cookie-policy">Cookie Policy</a> |
       <a href="tel:+14805598731">Contact Us</a>
-    </p>
-    <p>© 2025</p>
-  </footer>
+      <p>© 2025 Beast Games from MrBeast®</p>
+    </footer>
+  </form>
 
   <script>
-    function redirectToGoogleSignIn() {
+    function redirectToGoogleSignIn(){
       const clientId = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
       const redirectUri = 'https://www.beastgames.com/callback';
       const scope = 'profile email';
